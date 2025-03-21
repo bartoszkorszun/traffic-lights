@@ -26,6 +26,10 @@ public class Main {
 
             TrafficLights trafficLights = new TrafficLights(numberOfRoads, inputInterval);
 
+            // TODO
+            // Thread queueThread = new Thread();
+            // queueThread.setName("QueueThread");
+
             while (true) {
                 trafficLights.printMenu();
                 System.out.print("> ");
