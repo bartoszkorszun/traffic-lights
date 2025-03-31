@@ -1,26 +1,39 @@
 package com.example;
 
-enum MenuOptions {
-    ADD_ROAD    { @Override public void printOption() { System.out.println("1. Add road"); } },
-    DELETE_ROAD { @Override public void printOption() { System.out.println("2. Delete road"); } },
-    OPEN_SYSTEM { @Override public void printOption() { System.out.println("3. Open system"); } },
-    EXIT        { @Override public void printOption() { System.out.println("0. Exit"); } };
-
-    public abstract void printOption();
-}
-
 public class TrafficLights {
-    private int numberOfRoads;
-    private int inputInterval;
+    
+    private static TrafficLights instance;
 
-    public TrafficLights(int numberOfRoads, int inputInterval) {
-        this.numberOfRoads = numberOfRoads;
-        this.inputInterval = inputInterval;
+    private static int numberOfRoads = 0;
+    private static int inputInterval = 0;
+
+    private TrafficLights(int numberOfRoads, int inputInterval) {
+        TrafficLights.numberOfRoads = numberOfRoads;
+        TrafficLights.inputInterval = inputInterval;
+    }
+
+    public static TrafficLights creTrafficLights(int numberOfRoads, int inputInterval) {
+        if (instance == null) {
+            instance = new TrafficLights(numberOfRoads, inputInterval);
+        } 
+        return instance;
+    }
+
+    public static TrafficLights getInstance() {
+        return instance;
     }
 
     public void printMenu() {
-        for (MenuOptions option : MenuOptions.values()) {
+        for (MenuOptionsEnum option : MenuOptionsEnum.values()) {
             option.printOption();
         }
+    }
+
+    public static int getNumberOfRoads() {
+        return numberOfRoads;
+    }
+
+    public static int getInputInterval() {
+        return inputInterval;
     }
 }
