@@ -1,7 +1,7 @@
 package com.example;
 
 public class TrafficLights {
-    
+
     private static TrafficLights instance;
 
     private static int numberOfRoads = 0;
@@ -21,12 +21,6 @@ public class TrafficLights {
 
     public static TrafficLights getInstance() {
         return instance;
-    }
-
-    public void printMenu() {
-        for (MenuOptionsEnum option : MenuOptionsEnum.values()) {
-            option.printOption();
-        }
     }
 
     public static int getNumberOfRoads() {
