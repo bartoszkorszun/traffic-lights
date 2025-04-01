@@ -20,6 +20,7 @@ public class MenuThread extends Thread {
     }
 
     @Override
+    @SuppressWarnings("BusyWait")
     public void run() {
         int selectedOption;
 
@@ -48,7 +49,7 @@ public class MenuThread extends Thread {
                                 SystemThread.setOnDisplay(true);
                             }
                             case 0 -> {
-                                System.out.println("Bye!");
+                                System.out.print("Bye!");
                                 System.exit(0);
                             }
                             default -> System.out.println("Invalid option. Please try again.");
@@ -58,7 +59,7 @@ public class MenuThread extends Thread {
                     }
 
                     if (isOnDisplay) {
-                        System.out.println("Press Enter to continue...");
+                        System.out.print("Press Enter to continue...");
                         SharedScanner.getScannerInput(); 
                     }
                 }

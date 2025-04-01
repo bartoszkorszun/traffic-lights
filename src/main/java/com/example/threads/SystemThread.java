@@ -19,6 +19,7 @@ public class SystemThread extends Thread {
     }
 
     @Override
+    @SuppressWarnings("BusyWait")
     public void run() {
         int secoundsPassed = 0;
 
