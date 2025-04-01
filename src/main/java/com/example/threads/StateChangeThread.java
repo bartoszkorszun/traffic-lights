@@ -1,9 +1,9 @@
 package com.example.threads;
 
-import com.example.ClearConsole;
-import com.example.SharedScanner;
-import com.example.SystemState;
 import com.example.enums.SystemStateEnum;
+import com.example.utils.ClearConsole;
+import com.example.utils.SharedScanner;
+import com.example.utils.SystemState;
 
 public class StateChangeThread extends Thread {
 

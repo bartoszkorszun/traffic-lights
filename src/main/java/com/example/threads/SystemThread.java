@@ -1,9 +1,9 @@
 package com.example.threads;
 
-import com.example.ClearConsole;
-import com.example.SystemState;
 import com.example.TrafficLights;
 import com.example.enums.SystemStateEnum;
+import com.example.utils.ClearConsole;
+import com.example.utils.SystemState;
 
 public class SystemThread extends Thread {
     private static boolean isOnDisplay = false; 

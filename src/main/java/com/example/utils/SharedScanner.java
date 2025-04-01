@@ -1,4 +1,4 @@
-package com.example;
+package com.example.utils;
 
 import java.util.Scanner;
 import java.util.concurrent.locks.ReentrantLock;

@@ -4,6 +4,8 @@ import com.example.enums.SystemStateEnum;
 import com.example.threads.MenuThread;
 import com.example.threads.StateChangeThread;
 import com.example.threads.SystemThread;
+import com.example.utils.SharedScanner;
+import com.example.utils.SystemState;
 
 public class Main {
     public static void main(String[] args) {
