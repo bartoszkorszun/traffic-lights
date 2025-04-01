@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.enums.SystemStateEnum;
+import com.example.threads.MenuThread;
 import com.example.threads.StateChangeThread;
 import com.example.threads.SystemThread;
 
@@ -24,15 +25,16 @@ public class Main {
         }
     
         TrafficLights.createTrafficLights(numberOfRoads, inputInterval);
-
-        StateChangeThread stateChangeThread = new StateChangeThread();
-        SystemThread systemThread = new SystemThread();
-        // MenuThread menuThread = new MenuThread();
-
+        
+        StateChangeThread stateChangeThread = StateChangeThread.getInstance();
+        SystemThread systemThread = SystemThread.getInstance();
+        MenuThread menuThread = MenuThread.getInstance();
+        
         stateChangeThread.start();
         systemThread.start();
-        // menuThread.start();
+        menuThread.start();
 
         SystemState.setState(SystemStateEnum.SYSTEM);
+        SystemThread.setOnDisplay(true);
     }
 }
