@@ -1,10 +1,16 @@
-package com.example;
+package com.example.threads;
+
+import com.example.ClearConsole;
+import com.example.SystemState;
+import com.example.TrafficLights;
+import com.example.enums.SystemStateEnum;
 
 public class SystemThread extends Thread {
     
     @Override
     public void run() {
         int secoundsPassed = 0;
+
         while (true) {
             try {
                 if (SystemState.getState() == SystemStateEnum.SYSTEM) { printSystemInfo(secoundsPassed); }

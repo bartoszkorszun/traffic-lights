@@ -1,6 +1,8 @@
 package com.example;
 
-import java.util.Scanner;
+import com.example.enums.SystemStateEnum;
+import com.example.threads.StateChangeThread;
+import com.example.threads.SystemThread;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,27 +11,28 @@ public class Main {
 
         System.out.println("Welcome to the traffic management system!");
 
-        try (Scanner scanner = new Scanner(System.in)) {
-            while (true) {
-                try {
-                    System.out.print("Input the number of roads: > ");
-                    numberOfRoads = scanner.nextInt();
-                    System.out.print("Input the interval of time: > ");
-                    inputInterval = scanner.nextInt();
-                    break;
-                } catch (Exception e) {
-                    System.out.println("Invalid input. Please try again.");
-                    scanner.next();
-                }
+        while (true) {
+            try {
+                System.out.print("Input the number of roads: > ");
+                numberOfRoads = Integer.parseInt(SharedScanner.getScannerInput());
+                System.out.print("Input the interval of time: > ");
+                inputInterval = Integer.parseInt(SharedScanner.getScannerInput());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please try again.");
             }
-
         }
-        
-        TrafficLights.creTrafficLights(numberOfRoads, inputInterval);
+    
+        TrafficLights.createTrafficLights(numberOfRoads, inputInterval);
 
+        StateChangeThread stateChangeThread = new StateChangeThread();
         SystemThread systemThread = new SystemThread();
-        systemThread.start();
+        // MenuThread menuThread = new MenuThread();
 
-        // SystemState.setState(SystemStateEnum.SYSTEM);
+        stateChangeThread.start();
+        systemThread.start();
+        // menuThread.start();
+
+        SystemState.setState(SystemStateEnum.SYSTEM);
     }
 }

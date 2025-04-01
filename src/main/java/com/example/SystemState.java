@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.enums.SystemStateEnum;
+
 public class SystemState {
     private static SystemStateEnum state = SystemStateEnum.NOT_STARTED;
 
