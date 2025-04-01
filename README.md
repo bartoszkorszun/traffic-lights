@@ -43,3 +43,8 @@ mvn -q exec:java
 ## Dependencies
 
 This project uses Maven for dependency management. You can add additional dependencies in the `pom.xml` file as needed.
+
+## Challenges
+
+1. I needed to create a shared scanner as it uses System.in and it gets confused when it is used in multiple instances across multiple threads.
+2. Getting the threads to not interrupt each other so the menu and system info is displayed properly.
