@@ -4,6 +4,7 @@ public class RoadQueue {
     private static RoadQueue instance;
     
     private String[] roadQueue;
+    private String[] roadNames;
     private int queueSize;
     private int front;
     private int rear;
@@ -49,6 +50,7 @@ public class RoadQueue {
             return;
         } else {
             String road = roadQueue[front];
+            roadQueue[front] = null; 
             if (front == rear) {
                 front = -1;
                 rear = -1;
@@ -56,6 +58,25 @@ public class RoadQueue {
                 front = (front + 1) % queueSize;
             }
             System.out.println(road + " deleted");
+        }
+    }
+
+    public String[] getRoadNames() {
+        if (isEmpty()) {
+            return null;
+        } else {
+            if (roadNames == null) {
+                roadNames = new String[queueSize];
+            }
+            for (int i = 0; i < queueSize; i++) {
+                roadNames[i] = null;
+            }
+            int index = 0;
+            for (int i = front; i != rear; i = (i + 1) % queueSize) {
+                roadNames[index++] = roadQueue[i];
+            }
+            roadNames[index] = roadQueue[rear];
+            return roadNames;
         }
     }
 

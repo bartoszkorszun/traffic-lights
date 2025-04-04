@@ -1,5 +1,6 @@
 package com.example.threads;
 
+import com.example.RoadQueue;
 import com.example.TrafficLights;
 import com.example.enums.SystemStateEnum;
 import com.example.utils.ClearConsole;
@@ -41,6 +42,18 @@ public class SystemThread extends Thread {
             System.out.println("! " + secoundsPassed + "s. have passed since the system startup !");
             System.out.println("! Number of roads: " + TrafficLights.getNumberOfRoads() + " !");
             System.out.println("! Interval: " + TrafficLights.getInputInterval() + " !");
+
+            String[] roadNames = RoadQueue.getInstance().getRoadNames();
+            if (roadNames != null) {
+                System.out.println();
+                for (String roadName : roadNames) {
+                    if (roadName != null) {
+                        System.out.println(roadName);
+                    }
+                }
+                System.out.println();
+            }
+
             System.out.println("! Press \"Enter\" to open menu !");
         }
     }
