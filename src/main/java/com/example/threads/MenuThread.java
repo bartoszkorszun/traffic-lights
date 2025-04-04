@@ -49,7 +49,7 @@ public class MenuThread extends Thread {
                                 SystemThread.setOnDisplay(true);
                             }
                             case 0 -> {
-                                System.out.print("Bye!");
+                                System.out.println("Bye!");
                                 System.exit(0);
                             }
                             default -> System.out.println("Invalid option. Please try again.");

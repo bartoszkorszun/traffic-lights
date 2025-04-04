@@ -27,6 +27,7 @@ public class Main {
         }
     
         TrafficLights.createTrafficLights(numberOfRoads, inputInterval);
+        RoadQueue roadQueue = RoadQueue.createRoadQueue(numberOfRoads);
         
         StateChangeThread stateChangeThread = StateChangeThread.getInstance();
         SystemThread systemThread = SystemThread.getInstance();
