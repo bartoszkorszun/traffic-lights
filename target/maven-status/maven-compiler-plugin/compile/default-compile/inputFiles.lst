@@ -1,0 +1,11 @@
+/workspaces/traffic-lights/src/main/java/com/example/threads/MenuThread.java
+/workspaces/traffic-lights/src/main/java/com/example/Main.java
+/workspaces/traffic-lights/src/main/java/com/example/utils/SharedScanner.java
+/workspaces/traffic-lights/src/main/java/com/example/enums/MenuOptionsEnum.java
+/workspaces/traffic-lights/src/main/java/com/example/utils/ClearConsole.java
+/workspaces/traffic-lights/src/main/java/com/example/TrafficLights.java
+/workspaces/traffic-lights/src/main/java/com/example/threads/SystemThread.java
+/workspaces/traffic-lights/src/main/java/com/example/threads/StateChangeThread.java
+/workspaces/traffic-lights/src/main/java/com/example/utils/SystemState.java
+/workspaces/traffic-lights/src/main/java/com/example/enums/SystemStateEnum.java
+/workspaces/traffic-lights/src/main/java/com/example/RoadQueue.java

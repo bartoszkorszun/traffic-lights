@@ -15,10 +15,13 @@ public class RoadQueue {
         this.rear = -1;
     }
 
-    public static RoadQueue createRoadQueue(int size) {
+    public static void createRoadQueue(int size) {
         if (instance == null) {
             instance = new RoadQueue(size);
         }
+    }
+
+    public static RoadQueue getInstance() {
         return instance;
     }
 
@@ -32,16 +35,18 @@ public class RoadQueue {
             if (rear == front) {
                 System.out.println("Queue is full");
                 rear = (rear - 1 + queueSize) % queueSize; 
+                return;
             } else {
                 roadQueue[rear] = road;
             }
         }
+        System.out.println("Road added: " + road);
     }
 
-    public String dequeue() {
+    public void dequeue() {
         if (isEmpty()) {
             System.out.println("Queue is empty");
-            return null;
+            return;
         } else {
             String road = roadQueue[front];
             if (front == rear) {
@@ -50,7 +55,7 @@ public class RoadQueue {
             } else {
                 front = (front + 1) % queueSize;
             }
-            return road;
+            System.out.println(road + " deleted");
         }
     }
 

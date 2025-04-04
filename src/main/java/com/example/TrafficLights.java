@@ -12,11 +12,10 @@ public class TrafficLights {
         TrafficLights.inputInterval = inputInterval;
     }
 
-    public static TrafficLights createTrafficLights(int numberOfRoads, int inputInterval) {
+    public static void createTrafficLights(int numberOfRoads, int inputInterval) {
         if (instance == null) {
             instance = new TrafficLights(numberOfRoads, inputInterval);
         } 
-        return instance;
     }
 
     public static TrafficLights getInstance() {

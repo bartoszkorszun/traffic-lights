@@ -1,5 +1,6 @@
 package com.example.threads;
 
+import com.example.RoadQueue;
 import com.example.enums.MenuOptionsEnum;
 import com.example.enums.SystemStateEnum;
 import com.example.utils.ClearConsole;
@@ -41,8 +42,12 @@ public class MenuThread extends Thread {
                     try {
                         selectedOption = Integer.parseInt(SharedScanner.getScannerInput());
                         switch (selectedOption) {
-                            case 1 -> System.out.println("Road added");
-                            case 2 -> System.out.println("Road deleted");
+                            case 1 -> {
+                                System.out.print("Input road name: ");
+                                String roadName = SharedScanner.getScannerInput();
+                                RoadQueue.getInstance().enqueue(roadName);
+                            }
+                            case 2 -> RoadQueue.getInstance().dequeue();
                             case 3 -> {
                                 SystemState.setState(SystemStateEnum.SYSTEM);
                                 isOnDisplay = false;
