@@ -37,7 +37,7 @@ public class Main {
         systemThread.start();
         menuThread.start();
 
-        SystemState.setState(SystemStateEnum.SYSTEM);
+        SystemState.setState(SystemStateEnum.MENU);
         SystemThread.setOnDisplay(true);
     }
 }
