@@ -1,5 +1,6 @@
 package com.example.threads;
 
+import com.example.Road;
 import com.example.RoadQueue;
 import com.example.TrafficLights;
 import com.example.enums.SystemStateEnum;
@@ -20,7 +21,6 @@ public class SystemThread extends Thread {
     }
 
     @Override
-    @SuppressWarnings("BusyWait")
     public void run() {
         int secoundsPassed = 0;
 
@@ -28,6 +28,14 @@ public class SystemThread extends Thread {
             try {
                 if (isOnDisplay) printSystemInfo(secoundsPassed);
                 secoundsPassed++;
+                Road[] roadQueue = RoadQueue.getInstance().getRoadQueue();
+                if (roadQueue != null) {
+                    for (Road road : roadQueue) {
+                        if (road != null) {
+                            road.decreaseTimeLeft();
+                        }
+                    }
+                }
                 Thread.sleep(1000); 
             } catch (InterruptedException e) {
                 System.out.println("System thread interrupted: " + e.getMessage());
@@ -41,19 +49,18 @@ public class SystemThread extends Thread {
             ClearConsole.clearConsole(); 
             System.out.println("! " + secoundsPassed + "s. have passed since the system startup !");
             System.out.println("! Number of roads: " + TrafficLights.getNumberOfRoads() + " !");
-            System.out.println("! Interval: " + TrafficLights.getInputInterval() + " !");
+            System.out.println("! Interval: " + TrafficLights.getInterval() + " !");
 
-            String[] roadNames = RoadQueue.getInstance().getRoadNames();
-            if (roadNames != null) {
+            Road[] roadQueue = RoadQueue.getInstance().getRoadQueue();
+            if (roadQueue != null) {
                 System.out.println();
-                for (String roadName : roadNames) {
-                    if (roadName != null) {
-                        System.out.println(roadName);
+                for (Road road : roadQueue) {
+                    if (road != null) {
+                        System.out.println("Road \"" + road.getName() + "\" will be " + road.getStateString() + " for " + road.getTimeLeft() + "s.");
                     }
                 }
                 System.out.println();
             }
-
             System.out.println("! Press \"Enter\" to open menu !");
         }
     }

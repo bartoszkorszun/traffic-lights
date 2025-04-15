@@ -5,16 +5,16 @@ public class TrafficLights {
     private static TrafficLights instance;
 
     private static int numberOfRoads = 0;
-    private static int inputInterval = 0;
+    private static int interval = 0;
 
-    private TrafficLights(int numberOfRoads, int inputInterval) {
+    private TrafficLights(int numberOfRoads, int interval) {
         TrafficLights.numberOfRoads = numberOfRoads;
-        TrafficLights.inputInterval = inputInterval;
+        TrafficLights.interval = interval;
     }
 
-    public static void createTrafficLights(int numberOfRoads, int inputInterval) {
+    public static void createTrafficLights(int numberOfRoads, int interval) {
         if (instance == null) {
-            instance = new TrafficLights(numberOfRoads, inputInterval);
+            instance = new TrafficLights(numberOfRoads, interval);
         } 
     }
 
@@ -26,7 +26,7 @@ public class TrafficLights {
         return numberOfRoads;
     }
 
-    public static int getInputInterval() {
-        return inputInterval;
+    public static int getInterval() {
+        return interval;
     }
 }
