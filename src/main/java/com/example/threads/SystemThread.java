@@ -56,7 +56,7 @@ public class SystemThread extends Thread {
                 System.out.println();
                 for (Road road : roadQueue) {
                     if (road != null) {
-                        System.out.println("Road \"" + road.getName() + "\" will be " + road.getStateString() + " for " + road.getTimeLeft() + "s.");
+                        System.out.println(road.toString());
                     }
                 }
                 System.out.println();
