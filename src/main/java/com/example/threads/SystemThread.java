@@ -1,8 +1,8 @@
 package com.example.threads;
 
-import com.example.Road;
-import com.example.RoadQueue;
-import com.example.TrafficLights;
+import com.example.entities.Road;
+import com.example.entities.RoadQueue;
+import com.example.entities.TrafficLights;
 import com.example.enums.SystemStateEnum;
 import com.example.utils.ClearConsole;
 import com.example.utils.SystemState;

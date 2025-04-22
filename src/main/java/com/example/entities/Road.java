@@ -1,4 +1,4 @@
-package com.example;
+package com.example.entities;
 
 import com.example.enums.RoadStateEnum;
 

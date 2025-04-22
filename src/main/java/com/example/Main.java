@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.entities.RoadQueue;
+import com.example.entities.TrafficLights;
 import com.example.enums.SystemStateEnum;
 import com.example.threads.MenuThread;
 import com.example.threads.StateChangeThread;

@@ -1,6 +1,6 @@
 package com.example.threads;
 
-import com.example.RoadQueue;
+import com.example.entities.RoadQueue;
 import com.example.enums.MenuOptionsEnum;
 import com.example.enums.SystemStateEnum;
 import com.example.utils.ClearConsole;
