@@ -13,10 +13,6 @@ public final class Road {
         this.timeLeft = timeLeft;
     }
 
-    public void increaseTimeLeft() {
-        this.timeLeft += TrafficLights.getInterval();
-    }
-
     public void decreaseTimeLeft() {
         if (this.timeLeft <= 0) {
             switchState();
@@ -118,11 +114,6 @@ public final class Road {
     public void makeOpen() {
         this.state = RoadStateEnum.OPEN;
         this.timeLeft = TrafficLights.getInterval();
-    }
-
-    public void forceClose(int interval) {
-        this.state = RoadStateEnum.CLOSED;
-        this.timeLeft = interval * RoadQueue.getNumberOfRoads();
     }
 
     public void setTimeLeft(int timeLeft) {
