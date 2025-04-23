@@ -49,6 +49,3 @@ This project uses Maven for dependency management. You can add additional depend
 1. I needed to create a shared scanner as it uses System.in and it gets confused when it is used in multiple instances across multiple threads.
 2. Getting the threads to not interrupt each other so the menu and system info is displayed properly.
 3. Handling addition and deletion of roads so their time and state are set up properly.
-
-## TODO
-Handling addition and deletion of roads so their time and state are set up properly.
